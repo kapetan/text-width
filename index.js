@@ -5,7 +5,10 @@ var supported = function() {
 	if(typeof document === 'undefined' || typeof document.createElement !== 'function') return false;
 
 	var canvas = document.createElement('canvas');
-	return (typeof canvas.getContext === 'function') && !!canvas.getContext('2d');
+	if(typeof canvas.getContext !== 'function') return false;
+
+	var context = canvas.getContext('2d');
+	return !!context && (typeof context.measureText === 'function');
 };
 
 var initialize = function() {
