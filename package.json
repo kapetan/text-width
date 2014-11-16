@@ -1,0 +1,31 @@
+{
+  "name": "text-width",
+  "version": "0.0.1",
+  "description": "Measure the text width in browsers",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/kapetan/text-width"
+  },
+  "keywords": [
+    "measure",
+    "text",
+    "width",
+    "canvas",
+    "context",
+    "2d"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kapetan/text-width/issues"
+  },
+  "dependencies": {
+    "xtend": "~4.0.0"
+  },
+  "devDependencies": {
+    "tape": "~3.0.3"
+  }
+}
