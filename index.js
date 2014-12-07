@@ -17,7 +17,10 @@ var initialize = function() {
 
 	return function(str, options) {
 		options = extend({
-			size: 10,
+			style: 'normal',
+			variant: 'normal',
+			weight: 'normal',
+			size: 'medium',
 			family: 'sans-serif',
 			align: 'start',
 			baseline: 'alphabetic'
@@ -26,7 +29,12 @@ var initialize = function() {
 		var size = options.size;
 		if(typeof size === 'number') size = size + 'px';
 
-		context.font = util.format('%s %s', size, options.family);
+		context.font = util.format('%s %s %s %s %s',
+			options.style,
+			options.variant,
+			options.weight,
+			size,
+			options.family);
 		context.textAlign = options.align;
 		context.textBaseline = options.baseline;
 
