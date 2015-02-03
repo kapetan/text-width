@@ -15,7 +15,7 @@ var initialize = function() {
 	var canvas = document.createElement('canvas');
 	var context = canvas.getContext('2d');
 
-	return function(str, options) {
+	var width = function(str, options) {
 		options = extend({
 			style: 'normal',
 			variant: 'normal',
@@ -40,8 +40,16 @@ var initialize = function() {
 
 		return context.measureText(str).width;
 	};
+
+	width.supported = true;
+	return width;
 };
 
-module.exports = supported() ? initialize() : function() {
-	return 0;
-};
+module.exports = supported() ? initialize() : (function() {
+	var width = function() {
+		return 0;
+	};
+
+	width.supported = false;
+	return width;
+}());

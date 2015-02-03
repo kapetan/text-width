@@ -5,6 +5,11 @@ var width = require('../index');
 
 var f = util.format;
 
+test('supported flag', function(t) {
+	t.ok(width.supported === true);
+	t.end();
+});
+
 test('zero text width for empty string', function(t) {
 	var result = width('');
 
